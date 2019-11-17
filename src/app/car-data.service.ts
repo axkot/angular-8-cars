@@ -1,27 +1,40 @@
 import { Injectable } from '@angular/core';
+import {Car} from Car;
 
 @Injectable()
 export class CarDataService {
   
-  items = [];
+  items: Car = [
+    {
+      brand: "Ford", 
+      model: "Focus",
+      refueling: [
+          {date: "2019-01-01", milage: "10000", liters: "19", isFull: true}
+      ],
+      service: [
+        {date: "2019-01-01", price: "100"}
+      ]
+    },
+    {brand: "Renault", model: "Scenic"}
+    ];
 
   constructor() { 
     
   }
 
-  addToCart(item) {
+  addToCart(item: Car) {
     this.items.push(item);
   }
 
-  getItems() {
+  getItems():Car[] {
     return this.items;
   }
 
-  getName() {
+  getName():String {
     return this.items[0].model;
   }
 
-  clearCart() {
+  clearCart():Car[] {
     this.items = [];
     return this.items;
   }

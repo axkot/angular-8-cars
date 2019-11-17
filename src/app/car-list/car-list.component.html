@@ -1,8 +1,17 @@
 <p>
 car-list works! {{name}}
 </p>
-<li> 1
-<li *ngFor="let item of items">2 {{ item }}</li>
+<li> 0 <B>Static</B> Element
+<li *ngFor="let item of items; index as i">{{ i+1 }} <B>{{ item.brand }}</B> {{ item.model}}
+  <ul *ngIf="item.refueling" title="Refueling" >
+    <li *ngFor="let refuel of item.refueling; index as ri"> {{ ri+1 }}) {{refuel.date}} - {{refuel.milage}} km - {{refuel.liters}} l - {{refuel.isFull}}</li>
+  </ul>
+  <input type="button" value="Add refueling"/>
+  <ul *ngIf="item.service" title="Servicing" >
+    <li *ngFor="let service of item.service; index as si">{{ si+1 }}. {{service.date}} - {{service.price}} zł</li>
+  </ul>
+  <input type="button" value="Add Service"/>
+</li>
 <p>
 car-list works!
 </p>

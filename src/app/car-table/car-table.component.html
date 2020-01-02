@@ -13,12 +13,26 @@
     <td mat-cell *matCellDef="let element"><input type=button value="Fuel"><input type=button value="Service"></td>
   </ng-container>
 
+  <ng-container matColumnDef="average_month">
+    <th mat-header-cell *matHeaderCellDef> Month Avg </th>
+    <td mat-cell *matCellDef="let element" align="right">{{element.average_month}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="average_month_fuel">
+    <th mat-header-cell *matHeaderCellDef> Fuel </th>
+    <td mat-cell *matCellDef="let element" align="right">{{element.average_month_fuel}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="average_month_service">
+    <th mat-header-cell *matHeaderCellDef> Srv </th>
+    <td mat-cell *matCellDef="let element" align="right">{{element.average_month_service}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="average_month_other">
+    <th mat-header-cell *matHeaderCellDef> Other </th>
+    <td mat-cell *matCellDef="let element" align="right">{{element.average_month_other}}</td>
+  </ng-container>
+
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-
-
-
-<!-- Copyright 2019 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license -->

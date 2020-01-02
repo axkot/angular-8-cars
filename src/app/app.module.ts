@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { CarListComponent } from './car-list/car-list.component';
 import { CarDataService } from './car-data.service';
-import { CarTableComponent } from './car-table/car-table.component';
+import { CarTableComponent } from './car-summary-table/car-summary-table.component';
 import { TableBasicExample } from './table-basic-example/table-basic-example';
 
 @NgModule({
